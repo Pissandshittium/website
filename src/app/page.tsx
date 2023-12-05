@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Hero from "./hero";
 import { /* funny feat icons */ CpuChipIcon, WindowIcon, EyeSlashIcon, UserCircleIcon, StopCircleIcon, ClockIcon,
@@ -5,13 +6,20 @@ import { /* funny feat icons */ CpuChipIcon, WindowIcon, EyeSlashIcon, UserCircl
  } from "@heroicons/react/24/outline";
  
 import ThemeSwitcher from "./themechanger";
+import { motion, stagger, useScroll  } from "framer-motion";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll()
   return (
     <>
       <Hero></Hero>
-      <div className="px-8 2xl:px-24">
-        <section className="mb-12">
+      <motion.div className="px-8 2xl:px-24"
+      initial={{opacity:0, translateY:100}}
+      animate={{opacity:1, translateY:0, transition:{duration:0.75,delay:0.75, staggerChildren: 0.25}}}
+      >
+        <motion.section
+      initial={{opacity:0, translateY:100}}
+      animate={{opacity:1, translateY:0, transition:{duration:0.75, delayChildren: 0.5}}} className="mb-12">
           <h2>A Browser that doesn&apos;t care</h2>
           <span>
             At Pissandshittium, we don&apos;t care how you use your browser. Nor
@@ -25,8 +33,10 @@ export default function Home() {
               I am basically proving that even you can make your own web browser based on Chromium.
             </span>
           </span>
-        </section>
-        <section className="mt-16">
+        </motion.section>
+        <motion.section
+      initial={{opacity:0, translateY:100}}
+      animate={{opacity:1, translateY:0, transition:{duration:0.75, delayChildren: 0.5}}} className="mt-16">
           <h1>&quot;Features&quot;</h1>
           <span className="text-sm">Disclaimer: This was written by Microsoft&apos;s Copilot. We don&apos;t actually do any of these and really we just think it&apos;s super funny.</span>
           <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
@@ -63,8 +73,10 @@ export default function Home() {
               "
             ></FeatureList>
           </div>
-        </section>
-        <section className="mt-16">
+        </motion.section>
+        <motion.section
+      initial={{opacity:0, translateY:100}}
+      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-16">
           <h1>Actual Features</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
             <FeatureList
@@ -93,17 +105,21 @@ export default function Home() {
               featureDesc={<>We believe in open source software. So we&apos;re making changes visible to the public eye just like regular Chromium. If you don&apos;t believe in builds provided. Feel free to compile it yourself.</>}
             ></FeatureList>
           </div>
-        </section>
+        </motion.section>
         
-        <section className="mt-12">
+        <motion.section
+      initial={{opacity:0, translateY:100}}
+      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-12">
           <h1>Screenshots</h1>
           <div className="flex gap-4 overflow-x-auto overflow-y-hidden relative flex-shrink-0 items-start flex-grow-0 md:max-h-[52dvh] rounded-xl object-contain">
           <img src="/screenshots/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
           <img src="/screenshots/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
           <img src="/screenshots/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
           </div>
-        </section>
-        <section className="mt-12">
+        </motion.section>
+        <motion.section
+      initial={{opacity:0, translateY:100}}
+      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-12">
           <h1>FAQs</h1>
           <h2 className="top-margin-spacing">Is this a virus?</h2>
           <span>
@@ -117,15 +133,19 @@ export default function Home() {
           <span>
             Obtain Chromium source code using depot_tools, pull Pissandshittium&apos;s source code, and then compile it. It&apos;s that simple.
           </span>
-        </section>
-        <section className="mt-12">
+        </motion.section>
+        <motion.section
+      initial={{opacity:0, translateY:100}}
+      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-12">
           <h1>Acknowledgement</h1>
           <span>
             I would like to give all credits to <a className="link" href="https://www.chromium.org/">The Chromium Project contributors</a> for making the backbone of Google Chrome and whatever this is possible. 
             Without them, this project wouldn&apos;t exist ever. I would also like to thank people in MMSI for words of (not so) encouragement and help with compilation on Linux.
           </span>
-        </section>
-        <section className="mt-12">
+        </motion.section>
+        <motion.section
+      initial={{opacity:0, translateY:100}}
+      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-12">
           <h1>Credits</h1>
           <span>
           <a className="link" href="https://www.chromium.org/">The Chromium Project</a> (duh)
@@ -136,8 +156,8 @@ export default function Home() {
             <br/>
 
           </span>
-        </section>
-      </div>
+        </motion.section>
+      </motion.div>
       <ThemeSwitcher></ThemeSwitcher>
     </>
   );
