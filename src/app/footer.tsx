@@ -8,7 +8,7 @@ export default function Footer(){
             <span>
                 &copy; Copyright 2023, Pissandshittium
             </span>
-            <a href="https://github.com/Pissandshittium" className='float-right'>
+            <a href="https://github.com/Pissandshittium" className='inline md:block md:float-right'>
 
                 <FontAwesomeIcon icon={faGithub} />
             </a>

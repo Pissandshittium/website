@@ -29,7 +29,7 @@ export default function Home() {
         <section className="mt-16">
           <h1>&quot;Features&quot;</h1>
           <span className="text-sm">Disclaimer: This was written by Microsoft&apos;s Copilot. We don&apos;t actually do any of these and really we just think it&apos;s super funny.</span>
-          <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
             <FeatureList
               icon={<CpuChipIcon width={96}></CpuChipIcon>}
               featureName="Unrivaled Inefficiency"
@@ -66,7 +66,7 @@ export default function Home() {
         </section>
         <section className="mt-16">
           <h1>Actual Features</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
             <FeatureList
               icon={<CodeBracketIcon width={96}></CodeBracketIcon>}
               featureName="Funny Strings"
@@ -97,10 +97,10 @@ export default function Home() {
         
         <section className="mt-12">
           <h1>Screenshots</h1>
-          <div className="flex gap-4 overflow-auto h-[50vh]">
-          <img src="/screenshots/pastsc1.png" alt="" className="h-full w-auto"></img>
-          <img src="/screenshots/pastsc2.png" alt="" className="h-full w-auto"></img>
-          <img src="/screenshots/pastsc3.png" alt="" className="h-full w-auto"></img>
+          <div className="flex gap-4 overflow-x-auto overflow-y-hidden relative flex-shrink-0 items-start flex-grow-0 md:max-h-[52dvh] rounded-xl object-contain">
+          <img src="/screenshots/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
+          <img src="/screenshots/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
+          <img src="/screenshots/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
           </div>
         </section>
         <section className="mt-12">
