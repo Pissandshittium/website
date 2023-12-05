@@ -128,11 +128,11 @@ export default function Home() {
         <section className="mt-12">
           <h1>Credits</h1>
           <span>
-          <a className="link" href="https://www.chromium.org/">The Chromium Project</a>
+          <a className="link" href="https://www.chromium.org/">The Chromium Project</a> (duh)
             <br/>
-            HeroIcons for icons on Features section.
+          <a className="link" href="https://heroicons.com/">HeroIcons</a> for icons on features section.
             <br/>
-            Font Awesome Brand Icons for GitHub icon.
+        <a className="link" href="https://fontawesome.com/">Font Awesome</a> Brand Icons for brand icons.
             <br/>
 
           </span>
