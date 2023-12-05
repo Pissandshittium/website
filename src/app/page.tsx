@@ -98,9 +98,9 @@ export default function Home() {
         <section className="mt-12">
           <h1>Screenshots</h1>
           <div className="flex gap-4 overflow-auto h-[50vh]">
-          <img src="/screenshots/pastsc1.png" alt="" className="h-auto"></img>
-          <img src="/screenshots/pastsc2.png" alt="" className="h-auto"></img>
-          <img src="/screenshots/pastsc3.png" alt="" className="h-auto"></img>
+          <img src="/screenshots/pastsc1.png" alt="" className="h-full w-auto"></img>
+          <img src="/screenshots/pastsc2.png" alt="" className="h-full w-auto"></img>
+          <img src="/screenshots/pastsc3.png" alt="" className="h-full w-auto"></img>
           </div>
         </section>
         <section className="mt-12">
