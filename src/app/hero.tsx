@@ -11,7 +11,7 @@ export default function Hero(){
                 <Logo></Logo>
                 Pissandshittium
             </h1>
-            <h2 className="text-lg md:text-3xl 2xl:text-4xl">
+            <h2 className="text-lg md:text-3xl 2xl:text-4xl text-center">
                 The Browser that doesn&apos;t <span>give a SHIT</span>.
             </h2>
             <div className="flex gap-2 flex-col lg:flex-row">
