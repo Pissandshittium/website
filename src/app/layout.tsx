@@ -13,6 +13,17 @@ import Footer from "./footer";
 export const metadata: Metadata = {
   title: 'Pissandshittium',
   description: 'Browser that does not care about you.',
+  viewport: 'width=device-width, initial-scale=1',
+  openGraph:{
+    images:[
+      {
+        url:'/pissandshittium.png',
+        width:128,
+        height:128,
+        alt:'Pissandshittium Logo'
+      }
+    ]
+  }
 }
 
 export default function RootLayout({
