@@ -17,11 +17,11 @@ body {
 }
 
 h1{
-  @apply font-display font-bold text-3xl lg:text-5xl;
+  @apply font-display font-bold text-3xl lg:text-5xl hyphens-auto;
 }
 h2{
-  @apply font-display font-bold text-2xl lg:text-4xl;
+  @apply font-display font-bold text-2xl lg:text-4xl hyphens-auto;
 }
 h3{
-  @apply font-display font-bold text-xl lg:text-3xl;
+  @apply font-display font-bold text-xl lg:text-3xl hyphens-auto;
 }

@@ -7,6 +7,7 @@ import { /* funny feat icons */ CpuChipIcon, WindowIcon, EyeSlashIcon, UserCircl
  
 import ThemeSwitcher from "./themechanger";
 import { motion, stagger, useScroll  } from "framer-motion";
+import { PropsWithChildren } from "react";
 
 export default function Home() {
   const { scrollYProgress } = useScroll()
@@ -14,12 +15,10 @@ export default function Home() {
     <>
       <Hero></Hero>
       <motion.div className="px-8 2xl:px-24"
-      initial={{opacity:0, translateY:100}}
-      animate={{opacity:1, translateY:0, transition:{duration:0.75,delay:0.75, staggerChildren: 0.25}}}
+      animate={{}}
+      transition={{duration:0.75, staggerChildren: 1.5}}
       >
-        <motion.section
-      initial={{opacity:0, translateY:100}}
-      animate={{opacity:1, translateY:0, transition:{duration:0.75, delayChildren: 0.5}}} className="mb-12">
+        <AnimatedSection>
           <h2>A Browser that doesn&apos;t care</h2>
           <span>
             At Pissandshittium, we don&apos;t care how you use your browser. Nor
@@ -33,13 +32,11 @@ export default function Home() {
               I am basically proving that even you can make your own web browser based on Chromium.
             </span>
           </span>
-        </motion.section>
-        <motion.section
-      initial={{opacity:0, translateY:100}}
-      animate={{opacity:1, translateY:0, transition:{duration:0.75, delayChildren: 0.5}}} className="mt-16">
+        </AnimatedSection>
+        <AnimatedSection>
           <h1>&quot;Features&quot;</h1>
           <span className="text-sm">Disclaimer: This was written by Microsoft&apos;s Copilot. We don&apos;t actually do any of these and really we just think it&apos;s super funny.</span>
-          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
+          <AnimatedDivision className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
             <FeatureList
               icon={<CpuChipIcon width={96}></CpuChipIcon>}
               featureName="Unrivaled Inefficiency"
@@ -72,13 +69,11 @@ export default function Home() {
               featureDesc="Patience is a virtue, and our browser is here to teach you that. Watch as websites load slower than a snail racing through peanut butter.
               "
             ></FeatureList>
-          </div>
-        </motion.section>
-        <motion.section
-      initial={{opacity:0, translateY:100}}
-      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-16">
+          </AnimatedDivision>
+        </AnimatedSection>
+        <AnimatedSection>
           <h1>Actual Features</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
+          <AnimatedDivision className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4">
             <FeatureList
               icon={<CodeBracketIcon width={96}></CodeBracketIcon>}
               featureName="Funny Strings"
@@ -104,22 +99,18 @@ export default function Home() {
               featureName="Open Source"
               featureDesc={<>We believe in open source software. So we&apos;re making changes visible to the public eye just like regular Chromium. If you don&apos;t believe in builds provided. Feel free to compile it yourself.</>}
             ></FeatureList>
-          </div>
-        </motion.section>
+          </AnimatedDivision>
+        </AnimatedSection>
         
-        <motion.section
-      initial={{opacity:0, translateY:100}}
-      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-12">
-          <h1>Screenshots</h1>
+        <AnimatedSection>
+          <h1>Screen&shy;shots</h1>
           <div className="flex gap-4 overflow-x-auto overflow-y-hidden relative flex-shrink-0 items-start flex-grow-0 md:max-h-[52dvh] rounded-xl object-contain">
-          <img src="/screenshots/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
-          <img src="/screenshots/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
-          <img src="/screenshots/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
           </div>
-        </motion.section>
-        <motion.section
-      initial={{opacity:0, translateY:100}}
-      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-12">
+        </AnimatedSection>
+        <AnimatedSection>
           <h1>FAQs</h1>
           <h2 className="top-margin-spacing">Is this a virus?</h2>
           <span>
@@ -133,42 +124,75 @@ export default function Home() {
           <span>
             Obtain Chromium source code using depot_tools, pull Pissandshittium&apos;s source code, and then compile it. It&apos;s that simple.
           </span>
-        </motion.section>
-        <motion.section
-      initial={{opacity:0, translateY:100}}
-      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-12">
-          <h1>Acknowledgement</h1>
+        </AnimatedSection>
+        <AnimatedSection>
+          <h1>Acknow&shy;ledgement</h1>
           <span>
             I would like to give all credits to <a className="link" href="https://www.chromium.org/">The Chromium Project contributors</a> for making the backbone of Google Chrome and whatever this is possible. 
             Without them, this project wouldn&apos;t exist ever. I would also like to thank people in MMSI for words of (not so) encouragement and help with compilation on Linux.
           </span>
-        </motion.section>
-        <motion.section
-      initial={{opacity:0, translateY:100}}
-      animate={{opacity:1, translateY:0, transition:{duration:0.75, staggerChildren: 0.25, delayChildren: 0.5}}} className="mt-12">
+        </AnimatedSection>
+        <AnimatedSection>
+          
           <h1>Credits</h1>
           <span>
           <a className="link" href="https://www.chromium.org/">The Chromium Project</a> (duh)
             <br/>
           <a className="link" href="https://heroicons.com/">HeroIcons</a> for icons on features section.
             <br/>
-        <a className="link" href="https://fontawesome.com/">Font Awesome</a> Brand Icons for brand icons.
+          <a className="link" href="https://fontawesome.com/">Font Awesome</a> Brand Icons for brand icons.
             <br/>
 
           </span>
-        </motion.section>
+        </AnimatedSection>
       </motion.div>
       <ThemeSwitcher></ThemeSwitcher>
     </>
   );
 }
 
+const variants = {
+    
+    initX:{opacity:0, x:100},
+    enterX:{opacity:1, x:0},
+    initY:{opacity:0, y:100},
+    enterY:{opacity:1, y:0},
+    initO:{opacity:0},
+    enterO:{opacity:1},
+}
 function FeatureList({icon,featureName,featureDesc}:{icon:any,featureName:any,featureDesc:any}) {
   return (
-    <div className="flex items-center gap-2 flex-col">
+    <motion.div className="flex items-center gap-2 flex-col"
+    variants={variants}
+    initial={'initY'}
+    whileInView={'enterY'}
+    >
         {icon}
       <h2>{featureName}</h2>
       <span>{featureDesc}</span>
-    </div>
+    </motion.div>
   );
+}
+
+function AnimatedSection({children}:PropsWithChildren<any>){
+  
+  return (<motion.section
+    variants={variants}
+    initial={'initO'}
+    whileInView={'enterO'}
+  transition={{duration:0.5}}
+  className="mt-12"
+  >
+    {children}
+  </motion.section>)
+}
+function AnimatedDivision({children}:PropsWithChildren<any>){
+  
+  return (
+    <motion.div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4"
+    variants={variants}
+    transition={{duration:0.95,staggerChildren:0.35}}
+    >
+      {children}
+    </motion.div>)
 }
