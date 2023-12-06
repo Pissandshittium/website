@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function Logo() {
 const variants = {
     rotate: {
-        rotateZ: -720,
+        rotateZ: -1800,
         transition: {
         ease: [0.59, 1.5, 0, 0.79],
         duration: 2,
