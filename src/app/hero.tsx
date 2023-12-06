@@ -27,7 +27,7 @@ export default function Hero(){
                 </h2>
                 <div className="flex gap-2 flex-col lg:flex-row">
 
-                <DownloadButton downloadText="Download for Windows" downloadLink="https://files.aikoyori.xyz/pissandshittium/mini_installer.121.0.6157.6667.exe"></DownloadButton>
+                <DownloadButton downloadText="Download for Windows" downloadLink="https://files.aikoyori.xyz/pissandshittium/mini_installer.121.0.6167.0.exe"></DownloadButton>
                 <DownloadButton downloadText="Download for Linux Soon" downloadLink=""></DownloadButton>
                 </div>
             </motion.div>
