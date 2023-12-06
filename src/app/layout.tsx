@@ -11,7 +11,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import Footer from "./footer"; 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://browser.aikoyori.xyz'),
+  metadataBase: new URL('https://pissandshittium.org'),
   title: 'Pissandshittium',
   description: 'Browser that does not care about you.',
   openGraph:{
