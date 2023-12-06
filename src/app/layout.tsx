@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph:{
     images:[
       {
-        url:'/pissandshittium.png',
+        url:'https://browser.aikoyori.xyz/pissandshittium.png',
         width:128,
         height:128,
         alt:'Pissandshittium Logo'
