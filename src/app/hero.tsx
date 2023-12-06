@@ -1,5 +1,5 @@
 'use client';
-import { use } from "react";
+import { use,useEffect, useState  } from "react";
 import { PropsWithChildren } from "react"
 import Image from "next/image"
 import Logo from "./logo"
@@ -7,8 +7,18 @@ import DownloadButton from "./downloadbutton"
 import { motion } from "framer-motion"
 
 export default function Hero(){
-    const latestVersion = use(getLatestVersion());
-    
+    const [ loading, setLoading ] = useState(true)
+    const [ latest, setLatest ] = useState("")
+    useEffect(() => {
+        getLatestVersion()
+          .then((res) => res.text())
+          .then((data) => {
+            
+            setLatest(data)
+            setLoading(false)
+          })
+      }, [])
+     
     return (
         <>
         <motion.div className="w-full lg:w-full h-full items-center justify-center flex-col gap-2 flex px-8 from-[#d48e64] to-transparent dark:from-[#833d58] dark:to-transparent bg-gradient-to-b"
@@ -29,7 +39,7 @@ export default function Hero(){
                 </h2>
                 <div className="flex gap-2 flex-col w-full flex-shrink lg:flex-row justify-center">
 
-                <DownloadButton downloadText="Download for Windows" downloadLink={"https://files.aikoyori.xyz/pissandshittium/"+latestVersion}></DownloadButton>
+                <DownloadButton downloadText="Download for Windows" downloadLink={"https://files.aikoyori.xyz/pissandshittium/"+latest}></DownloadButton>
                 <DownloadButton downloadText="Download for Linux Soon" downloadLink=""></DownloadButton>
                 </div>
             </motion.div>
@@ -39,6 +49,6 @@ export default function Hero(){
     )
 }
 async function getLatestVersion() {
-    return (await fetch(`https://files.aikoyori.xyz/pissandshittium/VERSION`, { cache: 'no-store' })).text();
+    return (await fetch(`https://files.aikoyori.xyz/pissandshittium/VERSION`, { cache: 'no-store' }));
 
   }
