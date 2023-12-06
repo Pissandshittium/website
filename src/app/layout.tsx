@@ -11,13 +11,14 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import Footer from "./footer"; 
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://browser.aikoyori.xyz'),
   title: 'Pissandshittium',
   description: 'Browser that does not care about you.',
   viewport: 'width=device-width, initial-scale=1',
   openGraph:{
     images:[
       {
-        url:'https://browser.aikoyori.xyz/pissandshittium.png',
+        url:'/pissandshittium.png',
         width:128,
         height:128,
         alt:'Pissandshittium Logo'
