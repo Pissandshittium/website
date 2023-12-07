@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Hero from "./hero";
 import { /* funny feat icons */ CpuChipIcon, WindowIcon, EyeSlashIcon, UserCircleIcon, StopCircleIcon, ClockIcon,
-         /* actual feat icons */  CodeBracketIcon, SwatchIcon, QuestionMarkCircleIcon, ChatBubbleOvalLeftIcon, CloudArrowUpIcon
+         /* actual feat icons */  CodeBracketIcon, SwatchIcon, QuestionMarkCircleIcon, ChatBubbleOvalLeftIcon, CloudArrowUpIcon, DocumentIcon
  } from "@heroicons/react/24/outline";
  
 import ThemeSwitcher from "./themechanger";
@@ -99,15 +99,23 @@ export default function Home() {
               featureName="Open Source"
               featureDesc={<>We believe in open source software. So we&apos;re making changes visible to the public eye just like regular Chromium. If you don&apos;t believe in builds provided. Feel free to compile it yourself.</>}
             ></FeatureList>
+            <FeatureList
+              icon={<DocumentIcon width={96}></DocumentIcon>}
+              featureName="I don't know what I'm doing"
+              featureDesc={<>Honestly, I just tried to fix bugs but the codebase was very unstable (the code is unstable by nature) but you&apos;ll get to try the latest Chrome feature!</>}
+            ></FeatureList>
           </AnimatedDivision>
         </AnimatedSection>
         
         <AnimatedSection>
           <h1>Screen&shy;shots</h1>
           <div className="flex gap-4 overflow-x-auto overflow-y-hidden relative flex-shrink-0 items-start flex-grow-0 md:max-h-[52dvh] rounded-xl object-contain">
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/a/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/v/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/a/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/v/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/a/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/v/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
           </div>
         </AnimatedSection>
         <AnimatedSection>
@@ -118,11 +126,15 @@ export default function Home() {
           </span>
           <h2 className="top-margin-spacing">Is this safe to use?</h2>
           <span>
-            Yes, if you so desire to daily drive this browser. It&apos;s pretty much safe to use. But we don&apos;t recommend you use it as your main.
+            Yes, if you so desire to daily drive this browser. It&apos;s pretty much safe to use. But we don&apos;t recommend you use it as your main as it can be quite unstable.
           </span>
           <h2 className="top-margin-spacing">How do I compile this thing?</h2>
           <span>
             Obtain Chromium source code using depot_tools, pull Pissandshittium&apos;s source code, and then compile it. It&apos;s that simple.
+          </span>
+          <h2 className="top-margin-spacing">Do you plan to do this with Firefox?</h2>
+          <span>
+            Yes and it will be named Poopenfartenfox.
           </span>
         </AnimatedSection>
         <AnimatedSection>
@@ -142,6 +154,9 @@ export default function Home() {
             <br/>
           <a className="link" href="https://fontawesome.com/">Font Awesome</a> Brand Icons for brand icons.
             <br/>
+          MMSI for build labs
+            <br/>
+            Others for some feedback
 
           </span>
         </AnimatedSection>
@@ -168,7 +183,7 @@ function FeatureList({icon,featureName,featureDesc}:{icon:any,featureName:any,fe
     whileInView={'enterY'}
     >
         {icon}
-      <h2>{featureName}</h2>
+      <h2 className="text-center">{featureName}</h2>
       <span>{featureDesc}</span>
     </motion.div>
   );

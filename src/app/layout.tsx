@@ -33,9 +33,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className='font-text bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text'>
+      <body className='font-text transition-colors bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text'>
         
-      <WebThemeProvider>{children}
+      <WebThemeProvider>
+        {children}
       
       <Footer></Footer>
       </WebThemeProvider>
