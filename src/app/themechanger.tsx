@@ -28,8 +28,8 @@ export default function ThemeSwitcher() {
   };
   const systemThemeIcon = {
     initial: { opacity: 1,width:24,  },
-    hidden: { opacity: 0, width:0, pointerEvents:"none" },
-    show: { opacity: 1, width:24, pointerEvents:"auto" },
+    hidden: { opacity: 0, width:0,  },
+    show: { opacity: 1, width:24,  },
   };
   if (!mounted) return null;
 
@@ -67,7 +67,7 @@ export default function ThemeSwitcher() {
             </motion.button>
           )}
           
-        <div className="flex">
+        <div className="flex  z-10">
                     <ThemeToggleSwitch
                       theme={resolvedTheme}
                       setTheme={setTheme}
