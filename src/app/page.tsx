@@ -161,7 +161,6 @@ export default function Home() {
           </span>
         </AnimatedSection>
       </motion.div>
-      <ThemeSwitcher></ThemeSwitcher>
     </>
   );
 }

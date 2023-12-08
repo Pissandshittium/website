@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import './globals.css'
 import { WebThemeProvider } from './themeprovider';
 import '@fortawesome/fontawesome-svg-core/styles.css'
-
+import ThemeSwitcher from './themechanger';
 import Footer from "./footer"; 
 
 export const metadata: Metadata = {
@@ -36,6 +36,7 @@ export default function RootLayout({
       <body className='font-text transition-colors bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text'>
         
       <WebThemeProvider>
+      <ThemeSwitcher></ThemeSwitcher>
         {children}
       
       <Footer></Footer>

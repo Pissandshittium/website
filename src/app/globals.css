@@ -11,15 +11,15 @@
     @apply text-dark-accent dark:text-light-accent underline;
   }
    .insetter {
-    @apply inset-0 transition-shadow;
-    box-shadow: inset 0 0 0 2rem theme("colors.light-primary");
+    @apply inset-0 duration-200;
+    box-shadow: inset 0 0 0rem 1rem theme("colors.light-primary");
   }
   .dark .insetter {
-      box-shadow: inset 0 0 0 2rem theme("colors.dark-secondary");
+      box-shadow: inset 0 0 0rem 1rem theme("colors.dark-secondary");
     }
     
   .insetter:hover {
-    box-shadow: inset 0 0 0 2rem transparent;
+    box-shadow: inset 0 0 0rem 0rem transparent;
   }
   .clipper{
     @apply overflow-hidden;

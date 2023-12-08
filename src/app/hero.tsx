@@ -22,7 +22,7 @@ export default function Hero(){
      
     return (
         <>
-        <motion.div className="relative w-[100dvw] lg:w-full h-full clipper items-center justify-center z-10 flex-col gap-2 flex px-8 from-[#d48e64] to-transparent dark:from-[#833d58] dark:to-transparent bg-gradient-to-b"
+        <motion.div className="relative w-[100dvw] lg:w-full h-full clipper items-center justify-center z-10 flex-col gap-8 flex px-8 from-[#d48e64] to-transparent dark:from-[#833d58] dark:to-transparent bg-gradient-to-b"
     
             initial={{opacity:0, translateY:0}}
             animate={{opacity:1, translateY:0, transition:{duration:0.75}}}
@@ -38,7 +38,7 @@ export default function Hero(){
         style={{translateY: useTransform(scrollYProgress, l => l*-400),rotateZ:useTransform(scrollYProgress, l => l*7-5)}} src="/hero/twitter.png" 
         className="absolute overflow-x-clip sepia saturate-200 top-0 -z-10 brightness-50 dark:hue-rotate-[100deg] left-[70%] blur-sm"></motion.img>
 
-            <motion.div className="items-center justify-center flex-col gap-2 flex"
+            <motion.div className="items-center justify-center flex-col gap-8 flex"
                         initial={{opacity:0, translateY:100}}
                         animate={{opacity:1, translateY:0, transition:{duration:0.5,delay:0.5}}}
             >
@@ -51,7 +51,7 @@ export default function Hero(){
                 <h2 className=" mix-blend-difference dark:mix-blend-exclusion  text-light-secondary dark:text-light-accent text-base md:text-3xl 2xl:text-4xl text-center">
                     The Browser that doesn&apos;t <span>give a SHIT</span>.
                 </h2>
-                <div className="flex gap-2 flex-col w-full flex-shrink lg:flex-row justify-center">
+                <div className="flex gap-4 flex-col w-full flex-shrink lg:flex-row justify-center">
 
                 <DownloadButton downloadText="Download for Windows" downloadLink={"https://files.aikoyori.xyz/pissandshittium/"+latest}></DownloadButton>
                 <DownloadButton downloadText="Download for Linux Soon" downloadLink=""></DownloadButton>
