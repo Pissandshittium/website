@@ -54,7 +54,7 @@ export default function Hero(){
                 <div className="flex gap-4 flex-col w-full flex-shrink lg:flex-row justify-center">
 
                 <DownloadButton downloadText="Download for Windows" downloadLink={"https://files.aikoyori.xyz/pissandshittium/"+latest}></DownloadButton>
-                <DownloadButton downloadText="Download for Linux Soon" downloadLink=""></DownloadButton>
+                <DownloadButton downloadText="Download for Linux, any day now" downloadLink="https://github.com/Pissandshittium/pissandshittium/issues/3"></DownloadButton>
                 </div>
             </motion.div>
 

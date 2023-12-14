@@ -9,6 +9,8 @@ import { WebThemeProvider } from './themeprovider';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import ThemeSwitcher from './themechanger';
 import Footer from "./footer"; 
+import NagBar from './nagbar';
+import NagbarButton from './NagbarButton';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pissandshittium.org'),
@@ -37,6 +39,7 @@ export default function RootLayout({
         
       <WebThemeProvider>
       <ThemeSwitcher></ThemeSwitcher>
+      <NagBar message={<><b>Warning!</b> The latest build of Pissandshittium is somewhat broken. <NagbarButton href="/broken">Tell me more</NagbarButton></>}></NagBar>
         {children}
       
       <Footer></Footer>
