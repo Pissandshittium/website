@@ -1,4 +1,5 @@
 import NagbarButton from "../NagbarButton";
+import Link from 'next/link';
 
 export default function Broken(){
     return (
@@ -6,16 +7,20 @@ export default function Broken(){
         <div className="pt-48 ">
             </div>      
         <div className="px-2 md:px-12">
-            <NagbarButton href="/">
+            
+            <Link href="/">
+            <button className="rounded-lg border-2 px-3 py-2 border-light-text hover:bg-light-text  dark:border-dark-text dark:hover:bg-dark-text hover:text-red-500 transition-colors">
+                
                 &lt; Go Back to main page
-            </NagbarButton>
+            </button>
+            </Link>
             <h1 className="text-4xl pt-8">What?</h1>
             <p className="text-lg pb-8">Okay, so, I made a website for this browser as a joke and then people started to actually use it. 
             I did not actually mean for it to be used or daily drive at all. I am sorry if you had a bad time with the browser. I barely know C lmfao
             </p>
             <h1  className="text-4xl">How is it broken? It seems to run fine for me</h1>
             <p className="text-lg pb-8">
-                Sooooo, it had a *memory leak* when you go to settings and that&apos;s all I had to say. I have no clue why it even happens and 
+                Sooooo, it had a <a className="link" href="https://github.com/Pissandshittium/pissandshittium/issues/2">*memory leak*</a> when you go to settings and that&apos;s all I had to say. I have no clue why it even happens and 
                 honestly I&apos;d just like to base it off stable now EXCEPT that I am unmotivated to do so.
             </p>
             <h1  className="text-4xl">The next course of action?</h1>
