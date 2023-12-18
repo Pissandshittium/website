@@ -8,6 +8,7 @@ import { /* funny feat icons */ CpuChipIcon, WindowIcon, EyeSlashIcon, UserCircl
 import ThemeSwitcher from "./themechanger";
 import { motion, stagger, useScroll  } from "framer-motion";
 import { PropsWithChildren } from "react";
+import Quote from "./quote";
 
 export default function Home() {
   const { scrollYProgress } = useScroll()
@@ -17,6 +18,7 @@ export default function Home() {
       <motion.div className="px-8 2xl:px-24"
       animate={{}}
       transition={{duration:0.75, staggerChildren: 1.5}}
+      viewport={{ once: true }}
       >
         <AnimatedSection>
           <h2>A Browser that doesn&apos;t care</h2>
@@ -110,13 +112,35 @@ export default function Home() {
         <AnimatedSection>
           <h1>Screen&shy;shots</h1>
           <div className="flex gap-4 overflow-x-auto overflow-y-hidden relative flex-shrink-0 items-start flex-grow-0 md:max-h-[52dvh] rounded-xl object-contain">
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/a/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/v/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/a/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/v/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/a/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
-          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} src="/screenshots/v/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} viewport={{ once: true }} src="/screenshots/a/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} viewport={{ once: true }} src="/screenshots/v/pastsc1.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} viewport={{ once: true }} src="/screenshots/a/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} viewport={{ once: true }} src="/screenshots/v/pastsc2.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} viewport={{ once: true }} src="/screenshots/a/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
+          <motion.img variants={variants} initial={'initX'} transition={{duration:0.25}} whileInView={'enterX'} viewport={{ once: true }} src="/screenshots/v/pastsc3.png" alt="" className="md:max-h-[50dvh] w-auto"></motion.img>
           </div>
+        </AnimatedSection>
+        <AnimatedSection>
+          <h1>Testimonials</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4">
+            <div className="flex flex-col justify-center">
+              <h2 className="top-margin-spacing pb-4 text-center">Brodie Robertson</h2>
+              <span>
+                <iframe width="100%" height="380px" src="https://www.youtube.com/embed/sZAtPvdgTM0?si=1r4nla3WpiMdTw-T" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </span>            
+            </div>
+            <div className="flex gap-6 flex-col">
+            <Quote author={<span><a  className="link" href="https://www.reddit.com/r/browsers/comments/18kwbil/pissandshittium_is_my_new_favorite_browser_now/">u/FurryRevolution</a> on Reddit</span>}>
+              <span className="italic">Pissandshittium is my new favorite browser now!</span>
+            </Quote>         
+            <Quote author={<span><a  className="link" href="https://www.reddit.com/r/browsers/comments/18kwbil/comment/kducv1u">u/Cylancer7253</a> on Reddit</span>}>
+              <span className="italic">I like it. Sounds just like any other chromium based browser. Can&apos;t wait for Poopenfartenfox to be finished.</span>
+            </Quote>              
+            </div>
+
+          </div>
+
         </AnimatedSection>
         <AnimatedSection>
           <h1>FAQs</h1>
@@ -178,8 +202,9 @@ function FeatureList({icon,featureName,featureDesc}:{icon:any,featureName:any,fe
   return (
     <motion.div className="flex items-center gap-2 flex-col"
     variants={variants}
-    initial={'initY'}
-    whileInView={'enterY'}
+    initial={'init0'}
+    whileInView={'enter0'}
+    viewport={{ once: true }}
     >
         {icon}
       <h2 className="text-center">{featureName}</h2>
@@ -195,6 +220,7 @@ function AnimatedSection({children}:PropsWithChildren<any>){
     initial={'initO'}
     whileInView={'enterO'}
   transition={{duration:0.5}}
+  viewport={{ once: true }}
   className="mt-12"
   >
     {children}
@@ -206,6 +232,7 @@ function AnimatedDivision({children}:PropsWithChildren<any>){
     <motion.div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 mt-4"
     variants={variants}
     transition={{duration:0.95,staggerChildren:0.35}}
+    viewport={{ once: true }}
     >
       {children}
     </motion.div>)

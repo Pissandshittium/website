@@ -13,7 +13,7 @@ export default function Footer(){
 
                     <FontAwesomeIcon icon={faGithub} />
                 </a>                
-                <a href="https://twitter.com/Aikoyori">
+                <a href="https://twitter.com/pissandshittium">
 
                     <FontAwesomeIcon icon={faTwitter} />
                 </a>                

@@ -32,7 +32,7 @@
 }
 
 body {
-  @apply w-full select-none h-[100dvh] overflow-y-auto text-lg lg:text-2xl;
+  @apply w-full h-[100dvh] overflow-y-auto text-lg lg:text-2xl;
   
 }
 

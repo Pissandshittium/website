@@ -22,7 +22,7 @@ export default function Hero(){
      
     return (
         <>
-        <motion.div className="relative w-[100dvw] lg:w-full h-full clipper items-center justify-center z-10 flex-col gap-8 flex px-8 from-[#d48e64] to-transparent dark:from-[#833d58] dark:to-transparent bg-gradient-to-b"
+        <motion.div className="select-none relative w-[100dvw] lg:w-full h-full clipper items-center justify-center z-10 flex-col gap-8 flex px-8 from-[#d48e64] to-transparent dark:from-[#833d58] dark:to-transparent bg-gradient-to-b"
     
             initial={{opacity:0, translateY:0}}
             animate={{opacity:1, translateY:0, transition:{duration:0.75}}}

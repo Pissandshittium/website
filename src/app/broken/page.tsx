@@ -29,6 +29,14 @@ export default function Broken(){
                 to actually take time to polish the browser to a usable state (more or less just make it stable) and maybe somehow figure out how to do auto update??
                 The future is uncertain for the browser but it will be done™ [citation needed].
             </p>
+            <h1  className="text-4xl">Linux build when?</h1>
+            <p className="text-lg pb-8">
+                We did get Linux to build (mainly thanks to people in MMSI) but we don&apos;t know to package it lol
+            </p>
+            <h1  className="text-4xl">Are the first 3 issues real</h1>
+            <p className="text-lg pb-8">
+                Oh yeah and it got bombarded with jokes lol not that i hate them
+            </p>
             <h1  className="text-4xl">Why?????</h1>
             <p className="text-lg pb-8">
                 Everything in this field takes a LOT time and I am literally unmotivated. The Chromium code is 50GB big (the source code alone) and it took me 13 hours just to pull the code from Chromium&apos;s repo. It also took like 6 hours just to compile (subsequent built are faster but if there are a lot of changes to the code it will take as long as if it&apos;s initial build). I technically am the only person building this (Windows build so far) and I&apos;d like to not spend half the day just waiting for barely anything to happen.
