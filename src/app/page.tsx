@@ -126,8 +126,8 @@ export default function Home() {
             <div className="flex flex-col justify-center">
               <h2 className="top-margin-spacing pb-4 text-center">Brodie Robertson</h2>
               <span>
-                <iframe width="100%" height="380px" src="https://www.youtube.com/embed/sZAtPvdgTM0?si=1r4nla3WpiMdTw-T" title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="380px" src="https://www.youtube.com/embed/sZAtPvdgTM0?si=1r4nla3WpiMdTw-T" title="YouTube video player" frameBorder={0}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
               </span>            
             </div>
             <div className="flex gap-6 flex-col">
