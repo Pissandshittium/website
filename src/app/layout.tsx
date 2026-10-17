@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 
 import '@fontsource-variable/unbounded';
 import '@fontsource-variable/inter';
-import { motion } from "framer-motion"
+import { motion } from "motion/react";
 import './globals.css'
 import { WebThemeProvider } from './themeprovider';
 import '@fortawesome/fontawesome-svg-core/styles.css'

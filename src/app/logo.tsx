@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion,useAnimationControls } from "framer-motion";
+import { motion,useAnimationControls } from "motion/react";
 import { useState } from "react";
 
 export default function Logo() {

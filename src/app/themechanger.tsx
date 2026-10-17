@@ -7,8 +7,8 @@ import {
   SunIcon,
   MoonIcon,
 } from "@heroicons/react/24/outline";
-import { motion, stagger, useScroll } from "framer-motion";
-import { useAnimationControls, AnimationControls, useSpring } from "framer-motion";
+import { motion, stagger, useScroll } from "motion/react";
+import { useAnimationControls, LegacyAnimationControls, useSpring } from "motion/react";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -38,7 +38,7 @@ export default function ThemeSwitcher() {
       <motion.div
         initial={{ right: -192 }}
         transition={{ duration: 1 }}
-        className="overflow-hidden z-50 fixed bottom-12 lg:top-12 right-12 lg:bottom-auto backdrop-blur-sm  mix-blend-difference backdrop-invert
+        className="overflow-hidden z-50 fixed bottom-12 lg:top-20 right-12 lg:bottom-auto backdrop-blur-sm  mix-blend-difference backdrop-invert
     backdrop-brightness-110 flex origin-left items-center bg-transparent px-8 py-4 rounded-xl shadow-xl"
         variants={hidenshow}
         animate={"initial"}
@@ -89,8 +89,8 @@ function ThemeToggleSwitch({
 }: {
   theme: string | undefined;
   setTheme: Function;
-  control: AnimationControls;
-  bigControl: AnimationControls;
+  control: LegacyAnimationControls;
+  bigControl: LegacyAnimationControls;
 }) {
   const variant = {
     rotate: {

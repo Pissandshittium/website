@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
 export default function DownloadButton({downloadLink, downloadText}:{downloadLink:string,downloadText:string})

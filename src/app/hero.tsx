@@ -4,22 +4,13 @@ import { PropsWithChildren } from "react"
 import Image from "next/image"
 import Logo from "./logo"
 import DownloadButton from "./downloadbutton"
-import { motion, useScroll,useTransform } from "framer-motion"
+import { motion, useScroll,useTransform } from "motion/react";
 
 export default function Hero(){
     const { scrollYProgress } = useScroll();
     const [ loading, setLoading ] = useState(true)
-    const [ latest, setLatest ] = useState("")
-    useEffect(() => {
-        getLatestVersion()
-          .then((res) => res.text())
-          .then((data) => {
-            
-            setLatest(data)
-            setLoading(false)
-          })
-      }, [])
-     
+    const [ latest, setLatest ] = useState("https://github.com/Pissandshittium/pissandshittium/releases/latest")
+
     return (
         <>
         <motion.div className="select-none relative w-[100dvw] lg:w-full h-full clipper items-center justify-center z-10 flex-col gap-8 flex px-8 from-[#d48e64] to-transparent dark:from-[#833d58] dark:to-transparent bg-gradient-to-b"
@@ -53,8 +44,8 @@ export default function Hero(){
                 </h2>
                 <div className="flex gap-4 flex-col w-full flex-shrink lg:flex-row justify-center">
 
-                <DownloadButton downloadText="Download for Windows" downloadLink={"https://files.aikoyori.xyz/pissandshittium/"+latest}></DownloadButton>
-                <DownloadButton downloadText="Download for Linux, any day now" downloadLink="https://github.com/Pissandshittium/pissandshittium/issues/3"></DownloadButton>
+                <DownloadButton downloadText="Download for Windows" downloadLink={latest}></DownloadButton>
+                <DownloadButton downloadText="The Linux Experience™" downloadLink="https://github.com/Pissandshittium/pissandshittium/issues/3"></DownloadButton>
                 </div>
             </motion.div>
 
@@ -62,7 +53,3 @@ export default function Hero(){
         </>
     )
 }
-async function getLatestVersion() {
-    return (await fetch(`https://files.aikoyori.xyz/pissandshittium/VERSION`, { cache: 'no-store' }));
-
-  }
