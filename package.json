@@ -6,9 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:vinext": "vite dev --port 3001",
+    "build:vinext": "vite build",
+    "start:vinext": "vite preview",
+    "deploy:vinext": "vinext-cloudflare deploy",
+    "deploy:response-store": "cf deploy --prebuilt --mode production --worker pasnext-response-store"
   },
   "dependencies": {
+    "@cloudflare/workers-response-store": "^1.1.1",
     "@fontsource-variable/inter": "^5.0.15",
     "@fontsource-variable/syne": "^5.0.17",
     "@fontsource-variable/unbounded": "^5.0.17",
@@ -16,25 +22,35 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
     "@heroicons/react": "^2.0.18",
+    "@vinext/cloudflare": "^1.1.1",
     "motion": "^14.3.0",
     "next": "16.4.2",
     "next-themes": "^0.2.1",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "react-server-dom-webpack": "^19.3.1",
+    "vinext": "^1.2.1"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "2.0.0-beta.v.1",
     "@types/node": "^20",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@vitejs/plugin-rsc": "^0.5.38",
     "autoprefixer": "^10.0.1",
+    "cf": "1.0.0-beta.18",
     "eslint": "10.13.0",
     "eslint-config-next": "16.4.2",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vite": "8.3.0",
+    "wrangler": "^4.151.1"
   },
   "overrides": {
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0"
-  }
+  },
+  "type": "module"
 }
